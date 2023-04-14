@@ -3,8 +3,13 @@ require_once __DIR__.'/config.php';
 
 if(isset($_POST['next_step'])){
   $step = strtolower($_POST['next_step']);
+  foreach($_POST['answers'] as $question => $answer){
+    $statement = $pdo->prepare('INSERT INTO interviews (user_id, question_name, answer, time) VALUES (?, ?, ?, ?)');
+    $statement->execute(array(1, strtolower($question), $answer, time())); // TODO: create account system and dynamically change User ID
+  }
 }
 
+$is_first_step = false;
 $is_last_step = false;
 if(!$step){
   $step = array_key_first($interview_steps);
@@ -14,6 +19,9 @@ if(!$step){
 }
 $next_step = array_keys($interview_steps)[$next_step_id];
 
+if($next_step_id == 1){
+  $is_first_step = true;
+}
 if($next_step_id >= count($interview_steps)){
   $is_last_step = true;
 }
@@ -49,13 +57,13 @@ if(!$this_step){
           <?php
           if($this_step['type'] == 'form'){
             foreach($this_step['questions'] as $question){
-              $input = '<input type="text" class="form-control" name="'.htmlentities($question['name']).'" value="" required>';
+              $input = '<input type="text" class="form-control" name="answers['.htmlentities($question['name']).']" value="" required>';
               if($question['type'] == 'number'){
-                $input = '<input type="number" class="form-control" name="'.htmlentities($question['name']).'" value="0" required>';
+                $input = '<input type="number" class="form-control" name="answers['.htmlentities($question['name']).']" value="0" required>';
               }elseif($question['type'] == 'textarea'){
-                $input = '<textarea class="form-control" name="'.htmlentities($question['name']).'" required></textarea>';
+                $input = '<textarea class="form-control" name="answers['.htmlentities($question['name']).']" required></textarea>';
               }elseif($question['type'] == 'voice'){
-                $input = '<input type="file" accept=".mp3,.wav" name="'.htmlentities($question['name']).'" capture required>';
+                $input = '<input type="file" accept=".mp3,.wav" name="answers['.htmlentities($question['name']).']" capture required>';
               }
           ?>
           <div class="mb-3">

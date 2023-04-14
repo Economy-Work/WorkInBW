@@ -1,5 +1,15 @@
 <?php
 
+/*
+// DEBUGGING
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+*/
+
+// connect to local mysql database
+$pdo = new PDO('mysql:host=localhost:3306;dbname=workinbw', 'workinbw', 'helloworld123'); // TODO: save password as ENV secret (and change it)
+
 $interview_steps = [ // subject to change
   'details' => [
     'type' => 'form',
