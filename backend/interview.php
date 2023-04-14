@@ -1,8 +1,6 @@
 <?php
 require_once __DIR__.'/config.php';
 
-var_dump($_FILES);
-
 if(isset($_POST['next_step'])){
   $step = strtolower($_POST['next_step']);
   foreach($_POST['answers'] as $question => $answer){
