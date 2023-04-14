@@ -1,9 +1,17 @@
 <?php
 require_once __DIR__.'/config.php';
 
+var_dump($_FILES);
+
 if(isset($_POST['next_step'])){
   $step = strtolower($_POST['next_step']);
   foreach($_POST['answers'] as $question => $answer){
+    if(!is_string($answer) || $_FILES['answers'][$question]){
+      $file_name = $_FILES['answers']['name'][$question];
+      $file_tmp = $_FILES['answers']['tmp_name'][$question];
+      $file_type = $_FILES['answers']['type'][$question];
+      continue; // TODO: handle file uploads from "speaking" step
+    }
     $statement = $pdo->prepare('INSERT INTO interviews (user_id, question_name, answer, time) VALUES (?, ?, ?, ?)');
     $statement->execute(array(1, strtolower($question), $answer, time())); // TODO: create account system and dynamically change User ID
   }
@@ -52,7 +60,7 @@ if(!$this_step){
     <h4 class="pt-2 pb-3 text-center"><?php echo htmlentities($this_step['title']); ?></h4>
     <div class="row">
       <div class="col-md-6 mx-auto">
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
           <input type="hidden" name="next_step" value="<?php echo htmlentities($next_step); ?>">
           <?php
           if($this_step['type'] == 'form'){
