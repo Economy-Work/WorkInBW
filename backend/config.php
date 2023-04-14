@@ -7,10 +7,12 @@ $interview_steps = [ // subject to change
     'questions' => [
       [
         'type' => 'text',
+        'name' => 'desc',
         'question' => 'What\'s your Job description?'
       ],
       [
         'type' => 'number',
+        'name' => 'experience',
         'question' => 'How many years do you have experience in this field?'
       ]
     ]
@@ -21,6 +23,7 @@ $interview_steps = [ // subject to change
     'questions' => [
       [
         'type' => 'voice',
+        'name' => 'speaking',
         'question' => 'Text to read out loud goes here'
       ]
     ]
@@ -31,6 +34,7 @@ $interview_steps = [ // subject to change
     'questions' => [
       [
         'type' => 'textarea',
+        'name' => 'writing',
         'question' => 'Topic to write about goes here'
       ]
     ]
@@ -41,10 +45,12 @@ $interview_steps = [ // subject to change
     'questions' => [
       [
         'type' => 'text',
+        'name' => 'pers1',
         'question' => 'Personality question 1 goes here'
       ],
       [
         'type' => 'text',
+        'name' => 'pers2',
         'question' => 'Personality question 2 goes here'
       ]
     ]

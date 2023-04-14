@@ -1,7 +1,22 @@
 <?php
 require_once __DIR__.'/config.php';
 
-$step = strtolower($_GET['step']);
+if(isset($_POST['next_step'])){
+  $step = strtolower($_POST['next_step']);
+}
+
+$is_last_step = false;
+if(!$step){
+  $step = array_key_first($interview_steps);
+  $next_step_id = 1;
+}else{
+  $next_step_id = array_search($step, array_keys($interview_steps))+1;
+}
+$next_step = array_keys($interview_steps)[$next_step_id];
+
+if($next_step_id >= count($interview_steps)){
+  $is_last_step = true;
+}
 
 $this_step = $interview_steps[$step];
 
@@ -30,16 +45,17 @@ if(!$this_step){
     <div class="row">
       <div class="col-md-6 mx-auto">
         <form method="POST">
+          <input type="hidden" name="next_step" value="<?php echo htmlentities($next_step); ?>">
           <?php
           if($this_step['type'] == 'form'){
             foreach($this_step['questions'] as $question){
-              $input = '<input type="text" class="form-control" value="">';
+              $input = '<input type="text" class="form-control" name="'.htmlentities($question['name']).'" value="" required>';
               if($question['type'] == 'number'){
-                $input = '<input type="number" class="form-control" value="0">';
+                $input = '<input type="number" class="form-control" name="'.htmlentities($question['name']).'" value="0" required>';
               }elseif($question['type'] == 'textarea'){
-                $input = '<textarea class="form-control"></textarea>';
+                $input = '<textarea class="form-control" name="'.htmlentities($question['name']).'" required></textarea>';
               }elseif($question['type'] == 'voice'){
-                $input = '<input type="file" accept=".mp3,.wav" capture>';
+                $input = '<input type="file" accept=".mp3,.wav" name="'.htmlentities($question['name']).'" capture required>';
               }
           ?>
           <div class="mb-3">
@@ -51,7 +67,13 @@ if(!$this_step){
           }
           ?>
           <button type="submit" class="btn btn-primary my-3 float-end">
-            Save & Next
+            <?php
+            if($is_last_step){ 
+              echo 'Submit'; 
+            }else{ 
+              echo 'Save & Next'; 
+            } 
+            ?>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
           </button>
         </form>
