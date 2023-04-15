@@ -20,8 +20,9 @@ if(isset($_POST['action'])){
   if($user){
     die('Error: User with this email address already exists. Please login instad.');
   }
+  $hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
   $statement = $pdo->prepare('INSERT INTO users (email, name, password, time) VALUES (?, ?, ?, ?)');
-  $statement->execute(array($_POST['email'], $_POST['name'], $_POST['password'], time()));
+  $statement->execute(array($_POST['email'], $_POST['name'], $hashed_password, time()));
   $user_id = $pdo->lastInsertId();
   if(!$user_id){
     die('Error: Couldn\'t create account. Please try again.');
