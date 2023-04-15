@@ -88,7 +88,7 @@ if(!$this_step){
             }
           }
           ?>
-          <button type="submit" class="btn btn-primary my-3 float-end">
+          <button type="submit" class="btn btn-dark my-3 float-end">
             <?php
             if($is_last_step){ 
               echo 'Submit'; 
