@@ -17,6 +17,24 @@ if(isset($_POST['action'])){
       $file_type = $_FILES['answers']['type'][$question];
       continue; // TODO: handle file uploads from "speaking" step
     }
+    if($question == 'writing'){
+      // cll the python API to process the written text
+      $curl = curl_init();
+      curl_setopt_array($curl, [
+        CURLOPT_URL => 'http://127.0.0.1:8001/AnalyzeText',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '', // empty to enable all supported compression algos
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS => json_encode(['text' => $answer]),
+        CURLOPT_HTTPHEADER => [
+          'Content-Type: application/json'
+        ]
+      ]);
+      $response = curl_exec($curl);
+      $answer = $response; // save returned data into db
+      curl_close($curl);
+    }
     $statement = $pdo->prepare('INSERT INTO interviews (user_id, step, question_name, answer, time) VALUES (?, ?, ?, ?, ?)');
     $statement->execute(array($_SESSION['user_id'], $step, strtolower($question), $answer, time()));
     header('Location: /dashboard.php');
