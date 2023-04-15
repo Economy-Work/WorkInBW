@@ -11,7 +11,7 @@ if(isset($_POST['action'])){
   if(!$_POST['email'] || !$_POST['password']){
     die('Error: missing parameters');
   }
-  $statement = $pdo->prepare('SELECT id, email, password FROM users WHERE email = ?');
+  $statement = $pdo->prepare('SELECT id, email, password, name FROM users WHERE email = ?');
   $statement->execute(array($_POST['email']));
   $user = $statement->fetch();
   if(!$user){
@@ -22,6 +22,7 @@ if(isset($_POST['action'])){
   }else{
     $_SESSION['loggedin'] = true;
     $_SESSION['user_id'] = $user['id'];
+    $_SESSION['user_name'] = $user['name'];
     header('Location: /dashboard.php');
     die();
   }

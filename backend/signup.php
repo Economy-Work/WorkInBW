@@ -29,6 +29,7 @@ if(isset($_POST['action'])){
   }else{
     $_SESSION['loggedin'] = true;
     $_SESSION['user_id'] = $user_id;
+    $_SESSION['user_name'] = $_POST['name'];
     header('Location: /dashboard.php');
     die();
   }
