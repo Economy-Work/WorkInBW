@@ -61,13 +61,15 @@ if(!$this_step){
           <?php
           if($this_step['type'] == 'form'){
             foreach($this_step['questions'] as $question){
+              $show_submit = true;
               $input = '<input type="text" class="form-control" name="answers['.htmlentities($question['name']).']" value="" required>';
               if($question['type'] == 'number'){
                 $input = '<input type="number" class="form-control" name="answers['.htmlentities($question['name']).']" value="0" required>';
               }elseif($question['type'] == 'textarea'){
                 $input = '<textarea class="form-control" name="answers['.htmlentities($question['name']).']" required></textarea>';
-              }elseif($question['type'] == 'voice'){
-                $input = '<input type="file" accept=".mp3,.wav" name="answers['.htmlentities($question['name']).']" capture required>';
+              }elseif($question['type'] == 'video'){
+                $show_submit = false;
+                $input = '<video id="video" style="display: none; width: 600px; height: 320px; max-width: 100%; background: black; transform: scaleX(-1);" autoplay></video><canvas id="canvas" style="display:none;"></canvas><h2 id="countdown"></h2><br><button type="button" id="btn" class="btn btn-dark btn-lg mx-auto mb-3">START</button><script src="/assets/js/camera.js"></script>';
               }
           ?>
           <div class="mb-3">
@@ -77,17 +79,13 @@ if(!$this_step){
           <?php
             }
           }
+          if($show_submit){
           ?>
           <button type="submit" class="btn btn-dark my-3 float-end">
-            <?php
-            if($is_last_step){ 
-              echo 'Submit'; 
-            }else{ 
-              echo 'Save & Next'; 
-            } 
-            ?>
+            Submit
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
           </button>
+          <?php } ?>
         </form>
       </div>
     </div>
