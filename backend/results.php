@@ -27,34 +27,35 @@ require_once __DIR__.'/config.php';
           </tr>
         </thead>
         <tbody>
+          <?php
+          $step_num = 0;
+          foreach($interview_steps as $name => $step){
+            if($name == 'details'){
+              continue;
+            }
+            $step_num++;
+            ?>
+            <tr>
+              <th scope="row" class="text-start"><?php echo htmlentities($step_num.'. '.$step['title']); ?></th>
+              <td></td>
+            </tr>
+            <?php
+            foreach($step['questions'] as $q){
+              $statement = $pdo->prepare('SELECT answer FROM interviews WHERE user_id = ? AND question_name = ?');
+              $statement->execute(array($_SESSION['user_id'], $q['name']));
+              $answer = $statement->fetch()['answer'];
+              if(!$answer){
+                $answer = 'not answered yet';
+              }
+          ?>
           <tr>
-            <th scope="row" class="text-start">Job-Skills</th>
-            <td>100</td>
+            <th scope="row" class="text-start text-secondary"><?php echo htmlentities($q['question']); ?></th>
+            <td><?php echo htmlentities($answer); ?></td>
           </tr>
-          <tr>
-            <th scope="row" class="text-start">Speaking-Assignment</th>
-            <td>40</td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <th scope="row" class="text-start">Writing-Assignment</th>
-            <td>70</td>
-          </tr>
-          <tr>
-            <th scope="row" class="text-start">Personality</th>
-            <td>20</td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <th scope="row" class="text-start">Writing-Assignment</th>
-            <td>70</td>
-          </tr>
-          <tr>
-            <th scope="row" class="text-start">Summary</th>
-            <td>300</td>
-          </tr>
+          <?php
+            }
+          }
+          ?>
         </tbody>
       </table>
     </div>

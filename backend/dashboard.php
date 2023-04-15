@@ -38,8 +38,8 @@ if(!$_SESSION['loggedin']){
             $future_step = true;
 
             // check if the user has already completed this step
-            $statement = $pdo->prepare('SELECT id FROM interview WHERE user_id = ? AND step = ?');
-            $statement->execute(array($_SESION['user_id'], $name));
+            $statement = $pdo->prepare('SELECT id FROM interviews WHERE user_id = ? AND step = ?');
+            $statement->execute(array($_SESSION['user_id'], $name));
             $interview_submission = $statement->fetch();
             if($interview_submission){
               $completed = true;

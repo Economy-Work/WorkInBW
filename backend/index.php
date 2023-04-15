@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+require_once __DIR__.'/config.php';
+
+?><!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -8,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="/assets/css/bootstrap.css" rel="stylesheet">
 </head>
-<body  style="background: #FDFF00;">
+<body style="background: #FDFF00;">
 
 <main>
   <?php include __DIR__.'/parts/navbar.php'; ?>

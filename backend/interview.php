@@ -45,9 +45,9 @@ if(isset($_POST['action'])){
     }
     $statement = $pdo->prepare('INSERT INTO interviews (user_id, step, question_name, answer, time) VALUES (?, ?, ?, ?, ?)');
     $statement->execute(array($_SESSION['user_id'], $step, strtolower($question), $answer, time()));
-    header('Location: /dashboard.php');
-    die();
   }
+  header('Location: /dashboard.php');
+  die();
 }
 
 if(!$step){
