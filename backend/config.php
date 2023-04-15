@@ -48,19 +48,19 @@ $interview_steps = [ // subject to change
       [
         'type' => 'text',
         'name' => 'tell_yourself',
-        'question' => 'Tell me something about yourself.'
+        'question' => 'Tell me something about yourself.',
         'video' => 'Starting.mp4'
       ],
       [
         'type' => 'text',
         'name' => 'working_bc',
-        'question' => 'Why do you want to work in Baden-Württemberg?'
+        'question' => 'Why do you want to work in Baden-Württemberg?',
         'video' => 'WhyWorkHere.mp4'
       ],
       [
         'type' => 'text',
         'name' => 'strengths',
-        'question' => 'What are your greatest strengths?'
+        'question' => 'What are your greatest strengths?',
         'video' => 'YourStrenghts.mp4'
       ],
       [
@@ -81,13 +81,13 @@ $interview_steps = [ // subject to change
       [
         'type' => 'text',
         'name' => 'greatest_accomp',
-        'question' => 'What is your greatet accomplishment?'
+        'question' => 'What is your greatet accomplishment?',
         'video' => 'GreatestAccomp.mp4'
       ],
       [
         'type' => 'text',
         'name' => 'position',
-        'question' => 'What are you looking for a new position?'
+        'question' => 'What are you looking for a new position?',
         'video' => 'Position.mp4'
       ],
       [
