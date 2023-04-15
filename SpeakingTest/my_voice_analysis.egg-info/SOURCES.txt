@@ -1,5 +1,3 @@
-LICENSE
-README.md
 setup.py
 my-voice-analysis/__init__.py
 my-voice-analysis/setup.py
