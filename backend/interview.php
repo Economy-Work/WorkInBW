@@ -10,7 +10,15 @@ if(!$_SESSION['loggedin']){
 $step = strtolower($_GET['step']);
 
 if(isset($_POST['action'])){
+
   foreach($_POST['answers'] as $question => $answer){
+    if(is_array($answer)){
+      $answer_txt = '';
+      foreach($answer as $a){
+        $answer_txt .= $a.',';
+      }
+      $answer = trim($answer_txt, ',');
+    }
     if(!is_string($answer) || $_FILES['answers'][$question]){
       $file_name = $_FILES['answers']['name'][$question];
       $file_tmp = $_FILES['answers']['tmp_name'][$question];
@@ -86,20 +94,23 @@ if(!$this_step){
               }elseif($question['type'] == 'date'){
                 $input = '<input type="date" class="form-control" name="answers['.htmlentities($question['name']).']" value="0" required>';
               }elseif($question['type'] == 'select'){
-                $input = '<select class="form-control" name="answers['.htmlentities($question['name']).']" required '.($question['allow_multiselect']? 'multiple' : '').'>';
+                $input = '<select class="form-control" name="answers['.htmlentities($question['name']).']'.($question['allow_multiselect']? '[]' : '').'" required '.($question['allow_multiselect']? 'multiple' : '').'>';
                 $input .= '<option disabled selected>Select an Option</option>';
                 foreach($question['options'] as $option=>$option_text){
                   $input .= '<option value="'.htmlentities($option).'">'.htmlentities($option_text).'</option>';
                 }
                 $input .= '</select>';
                 if($question['allow_multiselect']){
-                  $input .= '<div class="alert alert-info mt-1" role="alert"><small>Select multiple Options by pressing and holding CTRL or CMD</small></div>';
+                  $input .= '<i><small>Select multiple Options by pressing and holding CTRL or CMD</small></i>';
                 }
               }elseif($question['type'] == 'textarea'){
                 $input = '<textarea class="form-control" name="answers['.htmlentities($question['name']).']" required></textarea>';
               }elseif($question['type'] == 'video'){
                 $show_submit = false;
                 $input = '<video id="video" style="display: none; width: 600px; height: 320px; max-width: 100%; background: black; transform: scaleX(-1);" autoplay></video><canvas id="canvas" style="display:none;"></canvas><h2 id="countdown"></h2><br><button type="button" id="btn" class="btn btn-dark btn-lg mx-auto mb-3">START</button><script src="/assets/js/camera.js"></script>';
+              }
+              if($question['extra_info']){
+                $input .= '<div class="alert alert-info mt-1" role="alert"><small>'.htmlentities($question['extra_info']).'</small></div>';
               }
           ?>
           <div class="mb-3">
