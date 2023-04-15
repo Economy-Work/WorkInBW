@@ -1,6 +1,5 @@
 from gingerit.gingerit import GingerIt
-from flask_restful import Resource, Api
-from flask import Flask, request, jsonify
+from flask import Flask, request
 import json
 
 app = Flask(__name__)

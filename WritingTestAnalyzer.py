@@ -1,19 +1,9 @@
 import textstat
-import numpy as np
-import pandas as pd 
-import matplotlib.pyplot as plt
 import json
-
-from flask_restful import Resource, Api
 from flask import Flask, request, jsonify
 
 
 app = Flask(__name__)
-
-# @app.route('/foo', methods=['POST']) 
-# def foo():
-#     data = request.json
-    # return jsonify(data)
 
 @app.route('/AnalyzeText', methods=['POST'])
 def AnalyzeText():
