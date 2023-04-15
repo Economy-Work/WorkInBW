@@ -17,7 +17,7 @@ if(isset($_POST['action'])){
   if(!$user){
     die('Error: User with this email address not found. Please sign up instead.');
   }
-  if(!password_verify($_POST['password'], $user['password_hash'])){
+  if(!password_verify($_POST['password'], $user['password'])){
     die('Error: Invalid password. Please try again.');
   }else{
     $_SESSION['loggedin'] = true;
