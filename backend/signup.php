@@ -63,7 +63,7 @@ if(isset($_POST['action'])){
             </div>
             <div class="col-md-6">
               <label class="form-label">Repeat Password</label>
-              <input class="form-control" type="password" name="password"2 required>
+              <input class="form-control" type="password" name="password2" required>
             </div>
           </div>
           <div class="my-3 py-2 float-start">
