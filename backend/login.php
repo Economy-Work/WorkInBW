@@ -1,6 +1,12 @@
 <?php
 require_once __DIR__.'/config.php';
 
+// redirect the user to the dashboard if they are already loggedin
+if($_SESSION['loggedin']){
+  header('Location: /dashboard.php');
+  die();
+}
+
 if(isset($_POST['action'])){
   if(!$_POST['email'] || !$_POST['password']){
     die('Error: missing parameters');
