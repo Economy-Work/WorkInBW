@@ -20,7 +20,13 @@ $interview_steps = [ // subject to change
       [
         'type' => 'select',
         'name' => 'gender',
-        'question' => 'Pick your Gender?'
+        'question' => 'Pick your Gender?',
+        'options' => [
+          'female' => 'Female',
+          'male' => 'Male',
+          'diverse' => 'Diverse',
+          'unknown' => 'I don\'t want to disclose this'
+        ]
       ],
       [
         'type' => 'date',
@@ -47,7 +53,7 @@ $interview_steps = [ // subject to change
       [
         'type' => 'text',
         'name' => 'working_bc',
-        'question' => 'Why do you want to work in Baden-Wuertemberg?'
+        'question' => 'Why do you want to work in Baden-Württemberg?'
       ],
       [
         'type' => 'text',
@@ -88,9 +94,7 @@ $interview_steps = [ // subject to change
         'type' => 'text',
         'name' => 'work_envi',
         'question' => 'What kind of working enviroment do you work the best?'
-      ],
-      
-      // here go the other questions
+      ]
     ]
   ],
   'job_details' => [
@@ -100,8 +104,12 @@ $interview_steps = [ // subject to change
     'questions' => [
       [
         'type' => 'select',
+        'allow_multiselect' => true,
         'name' => 'jobtitle',
-        'question' => 'What\'s your Job or the Job you want to exercise?'
+        'question' => 'What\'s your Job or the Job you want to exercise?',
+        'options' => [
+          // jobs go here
+        ]
       ],
       [
         'type' => 'number',
