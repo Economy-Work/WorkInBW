@@ -17,7 +17,7 @@ if(isset($_POST['next_step'])){
       continue; // TODO: handle file uploads from "speaking" step
     }
     $statement = $pdo->prepare('INSERT INTO interviews (user_id, question_name, answer, time) VALUES (?, ?, ?, ?)');
-    $statement->execute(array(1, strtolower($question), $answer, time())); // TODO: create account system and dynamically change User ID
+    $statement->execute(array($_SESSION['user_id'], strtolower($question), $answer, time()));
   }
 }
 
