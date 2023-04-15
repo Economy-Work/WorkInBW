@@ -109,16 +109,16 @@ $interview_steps = [ // subject to change
         'question' => 'What\'s your Job or the Job you want to exercise?',
         'extra_info' => 'More Professions will be added soon!',
         'options' => [
-          '' => 'Cybersecurity',
-          '' => 'Data Management',
-          '' => 'Data Science & AI',
-          '' => 'Design',
-          '' => 'Alternative Antriebstechnologien',
-          '' => 'Analytische Chemie',
-          '' => 'Assistiertes & autonomes Fahren',
-          '' => 'Biotechnologie',
-          '' => 'Electrical Engineering',
-          '' => 'Industrial Engineering'
+          'cyberSecty' => 'Cybersecurity',
+          'dataMang' => 'Data Management',
+          'dataScnc' => 'Data Science & AI',
+          'dsgn' => 'Design',
+          'alternDrive' => 'Alternative drive technologies',
+          'analyChem' => 'Analytical Chemistry',
+          'assAutoDrive' => 'Assist & autonomous Driving',
+          'bioTech' => 'Biotechnologie',
+          'electrEng' => 'Electrical Engineering',
+          'industEng' => 'Industrial Engineering'
         ]
       ],
       [
