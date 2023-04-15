@@ -83,6 +83,18 @@ if(!$this_step){
               $input = '<input type="text" class="form-control" name="answers['.htmlentities($question['name']).']" value="" required>';
               if($question['type'] == 'number'){
                 $input = '<input type="number" class="form-control" name="answers['.htmlentities($question['name']).']" value="0" required>';
+              }elseif($question['type'] == 'date'){
+                $input = '<input type="date" class="form-control" name="answers['.htmlentities($question['name']).']" value="0" required>';
+              }elseif($question['type'] == 'select'){
+                $input = '<select class="form-control" name="answers['.htmlentities($question['name']).']" required '.($question['allow_multiselect']? 'multiple' : '').'>';
+                $input .= '<option disabled selected>Select an Option</option>';
+                foreach($question['options'] as $option=>$option_text){
+                  $input .= '<option value="'.htmlentities($option).'">'.htmlentities($option_text).'</option>';
+                }
+                $input .= '</select>';
+                if($question['allow_multiselect']){
+                  $input .= '<div class="alert alert-info mt-1" role="alert"><small>Select multiple Options by pressing and holding CTRL or CMD</small></div>';
+                }
               }elseif($question['type'] == 'textarea'){
                 $input = '<textarea class="form-control" name="answers['.htmlentities($question['name']).']" required></textarea>';
               }elseif($question['type'] == 'video'){
