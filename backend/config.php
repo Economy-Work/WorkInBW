@@ -44,6 +44,52 @@ $interview_steps = [ // subject to change
         'name' => 'tell_yourself',
         'question' => 'Tell me something about yourself.'
       ],
+      [
+        'type' => 'text',
+        'name' => 'working_bc',
+        'question' => 'Why do you want to work in Baden-Wuertemberg?'
+      ],
+      [
+        'type' => 'text',
+        'name' => 'strengths',
+        'question' => 'What are your greatest strengths?'
+      ],
+      [
+        'type' => 'text',
+        'name' => 'strgt_weaks',
+        'question' => 'What are your strengths and your weaknesses?'
+      ],
+      [
+        'type' => 'text',
+        'name' => 'want_to_know',
+        'question' => 'What do you want to know about the company or organization'
+      ],
+      [
+        'type' => 'text',
+        'name' => 'why_hire',
+        'question' => 'Why should we hire you?'
+      ],
+      [
+        'type' => 'text',
+        'name' => 'greatest_accomp',
+        'question' => 'What is your greatet accomplishment?'
+      ],
+      [
+        'type' => 'text',
+        'name' => 'position',
+        'question' => 'What are you looking for a new position?'
+      ],
+      [
+        'type' => 'text',
+        'name' => 'prof_achiv',
+        'question' => 'What is the professional achievment you`r most proud of?'
+      ],
+      [
+        'type' => 'text',
+        'name' => 'work_envi',
+        'question' => 'What kind of working enviroment do you work the best?'
+      ],
+      
       // here go the other questions
     ]
   ],
