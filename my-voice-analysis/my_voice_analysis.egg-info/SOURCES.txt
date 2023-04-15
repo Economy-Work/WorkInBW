@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+my-voice-analysis/__init__.py
+my-voice-analysis/setup.py
+my_voice_analysis.egg-info/PKG-INFO
+my_voice_analysis.egg-info/SOURCES.txt
+my_voice_analysis.egg-info/dependency_links.txt
+my_voice_analysis.egg-info/not-zip-safe
+my_voice_analysis.egg-info/requires.txt
+my_voice_analysis.egg-info/top_level.txt
