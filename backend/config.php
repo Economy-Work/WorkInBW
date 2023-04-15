@@ -61,7 +61,7 @@ $interview_steps = [ // subject to change
         'type' => 'text',
         'name' => 'strengths',
         'question' => 'What are your greatest strengths?',
-        'video' => 'YourStrenghts.mp4'
+        'video' => 'YourStrengths.mp4'
       ],
       [
         'type' => 'text',
@@ -82,7 +82,7 @@ $interview_steps = [ // subject to change
         'type' => 'text',
         'name' => 'greatest_accomp',
         'question' => 'What is your greatet accomplishment?',
-        'video' => 'GreatestAccomp.mp4'
+        'video' => 'GreatesAccomp.mp4'
       ],
       [
         'type' => 'text',
