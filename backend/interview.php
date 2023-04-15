@@ -85,12 +85,16 @@ if(!$this_step){
         <form method="POST" enctype="multipart/form-data">
           <input type="hidden" name="action" value="save">
           <?php
+          if($this_step['extra_info']){
+            echo '<div class="alert alert-info mt-1" role="alert"><small>'.htmlentities($this_step['extra_info']).'</small></div>';
+          }
           if($this_step['type'] == 'form'){
             foreach($this_step['questions'] as $question){
               $show_submit = true;
               $input = '<input type="text" class="form-control" name="answers['.htmlentities($question['name']).']" value="" required>';
+              
               if($question['type'] == 'number'){
-                $input = '<input type="number" class="form-control" name="answers['.htmlentities($question['name']).']" value="0" required>';
+                $input = '<input type="number" class="form-control" name="answers['.htmlentities($question['name']).']" value="0" min="'.htmlentities($question['min_value']).'" max="'.htmlentities($question['max_value']).'" required>';
               }elseif($question['type'] == 'date'){
                 $input = '<input type="date" class="form-control" name="answers['.htmlentities($question['name']).']" value="0" required>';
               }elseif($question['type'] == 'select'){
