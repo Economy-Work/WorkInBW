@@ -1,6 +1,9 @@
 <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-2 px-3 mb-4 border-bottom" style="background: #FDFF00;">
   <ul class="d-none d-md-block nav col-3 mb-2 mb-md-0">
-    <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
+    <li class="d-inline-block"><a href="/" class="nav-link px-2 link-secondary">Home</a></li>
+    <?php if($_SESSION['loggedin']){ ?>
+      <li class="d-inline-block"><a href="/dashboard.php" class="nav-link px-2 link-secondary">Dashboard</a></li>
+    <?php } ?>
   </ul>  
 
   <a href="/" class="d-flex col-md-12 justify-content-md-center flex-md-grow-1 align-items-center col-md-auto col-md-3 text-dark text-decoration-none w-auto">
