@@ -201,7 +201,7 @@ $interview_steps = [ // subject to change
       [
         'type' => 'video',
         'name' => 'speaking',
-        'question' => 'Text to read out loud goes here',
+        'question' => 'To assess your talking skills, please talk 3 minutes about the following topic:',
         'topics' => [
           'Are you good at art?',
           'Did you learn art at school when you were child.',
@@ -230,7 +230,7 @@ $interview_steps = [ // subject to change
       [
         'type' => 'textarea',
         'name' => 'writing',
-        'question' => 'Text to read out loud goes here',
+        'question' => 'To assess your writing an grammar skills, please write about ~500 words about the following topic:',
         'topics' => [
           'Some people think that government is wasting money on the arts  and this money can be utilized in a better way. What do you think?',
           'Most artists earn low salaries and should therefore receive funds from government to continue with their work. To what extent do you agree?',
