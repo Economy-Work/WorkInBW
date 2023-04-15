@@ -11,8 +11,8 @@
     <?php if($_SESSION['loggedin']){ ?>
       <a href="/logout.php" class="btn btn-outline-primary me-2">Logout</a>
     <?php }else{ ?>
-      <a href="/login.php" class="btn btn-outline-primary me-2">Login</a>
-      <a href="/signup.php" class="btn btn-outline-primary me-2">Sign Up</a>
+      <a href="/login.php" class="btn btn-outline-dark me-2">Login</a>
+      <a href="/signup.php" class="btn btn-dark me-2">Sign Up</a>
     <?php } ?>
   </div>
 </header>
