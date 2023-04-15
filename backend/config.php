@@ -201,7 +201,24 @@ $interview_steps = [ // subject to change
       [
         'type' => 'video',
         'name' => 'speaking',
-        'question' => 'Text to read out loud goes here'
+        'question' => 'Text to read out loud goes here',
+        'topics' => [
+          'Are you good at art?',
+          'Did you learn art at school when you were child.',
+          'Is art popular in your country, if yes what kind of art?',
+          'Did you enjoy your childhood?',
+          'What did you enjoy doing as a child?',
+          'Did you have lots of friends when you were child?',
+          'Are clothes important to you?',
+          'What kind of clothes do you usually wear?',
+          'Do most of the people in your country follow fashion?',
+          'Are you a happy person?',
+          'What makes you usually happy or unhappy?',
+          'Does the weather ever affect how you feel?',
+          'Do you think people in your country are generally happy people?',
+          'How do you usually get your news?',
+          'What kind of news do you usually follow?'
+        ]
       ]
     ]
   ],
@@ -211,9 +228,21 @@ $interview_steps = [ // subject to change
     'description' => 'Tets how well you can write in German',
     'questions' => [
       [
-        'type' => 'textarea',
-        'name' => 'writing',
-        'question' => 'Topic to write about goes here'
+        'Some people think that government is wasting money on the arts  and this money can be utilized in a better way. What do you think?',
+        'Most artists earn low salaries and should therefore receive funds from government to continue with their work. To what extent do you agree?',
+        'Companies should provide sports and social facilities for local communities. What do you think?',
+        'What are the advantages and disadvantages for both individuals and companies to shopping online? To what extent do you agree?',
+        'marketing and promotion is the key to a successful business? What do you think?',
+        'Some people think that only way to have success in business is to have a unique product. What do you think?',
+        'Some people think that women should not be allowed to work in the police force. What do you think?',
+        'More people believe that having a fixed punishment for all crimes is more efficient. What is your opinion on this.?',
+        'Some people think that poverty is the reason behind most crimes. To what extent do you agree?',
+        'The best way to improve health is to exercise daily. What do you think?',
+        'Doctors should be responsible for educating their patients about how to improve health. Do you agree with this?',
+        'Scientist predict that all people will choose to talk the same global language in the future. DO you think this is a positive or negative development?',
+        'Finding job satisfaction is considered to be a luxury in many developing countries. What do you think that is? Do you think job satisfaction is important?',
+        'Having a good university degree guarantees people a good job? To what extent you agree?',
+        'Globalization has both advantages and disadvantages. Discuss both and give your opinion?'
       ]
     ]
   ],
