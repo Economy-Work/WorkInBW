@@ -42,7 +42,7 @@ require_once __DIR__.'/config.php';
             <?php
             foreach($step['questions'] as $q){
               $statement = $pdo->prepare('SELECT answer FROM interviews WHERE user_id = ? AND question_name = ?');
-              $statement->execute(array($_SESION['user_id'], $q['name']));
+              $statement->execute(array($_SESSION['user_id'], $q['name']));
               $answer = $statement->fetch()['answer'];
               if(!$answer){
                 $answer = 'not answered yet';
