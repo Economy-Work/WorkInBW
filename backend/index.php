@@ -35,19 +35,19 @@
       <div class="row mt-3 g-5" >
         <div class="col-md-4">
           <div class="d-flex flex-column justify-content-center align-items-center text-center border rounded bg-white h-100 px-2 py-4">
-            <h3>1. Step:</h3>
+            <h3>Step 1</h3>
             Sign up for WorkinBW and start the adventurous journey in TheLänd!
           </div>
         </div>
         <div class="col-md-4">
           <div class="d-flex flex-column justify-content-center align-items-center text-center border rounded bg-white h-100 px-2 py-4">
-            <h3>2. Step:</h3>
+            <h3>Step 2</h3>
             Hurray! Your profile is shared with employers across BW
           </div>
         </div>
         <div class="col-md-4">
           <div class="d-flex flex-column justify-content-center align-items-center text-center border rounded bg-white h-100 px-2 py-4">
-            <h3>3. Step:</h3>
+            <h3>Step 3</h3>
             Lets get started to experience the life of your dreams in BW!
           </div>
         </div>
