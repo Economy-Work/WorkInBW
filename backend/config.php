@@ -34,6 +34,19 @@ $interview_steps = [ // subject to change
       ]
     ]
   ],
+  'personal' => [
+    'type' => 'form',
+    'title' => 'Getting to know you',
+    'description' => 'Tell us more about yourself and what you are looking for',
+    'questions' => [
+      [
+        'type' => 'text',
+        'name' => 'tell_yourself',
+        'question' => 'Tell me something about yourself.'
+      ],
+      // here go the other questions
+    ]
+  ],
   'job_details' => [
     'type' => 'form',
     'title' => 'Details about your profession',
@@ -57,7 +70,7 @@ $interview_steps = [ // subject to change
     'description' => 'Test how well you can speak German',
     'questions' => [
       [
-        'type' => 'voice',
+        'type' => 'video',
         'name' => 'speaking',
         'question' => 'Text to read out loud goes here'
       ]
