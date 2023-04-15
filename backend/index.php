@@ -54,7 +54,7 @@
       </div>
       <div class="row mt-3 gx-5">
         <div class="col-12">
-          <a href="/signup.php" class="btn btn-primary btn-lg btn-block btn-dark p-2 w-100">Let's get started!</a>
+          <a href="/signup.php" class="btn btn-lg btn-block btn-dark p-2 w-100">Let's get started!</a>
         </div>
       </div>
     </div>
