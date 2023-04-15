@@ -151,11 +151,11 @@ if(!$this_step){
 <main>
   <?php include __DIR__.'/parts/navbar.php'; ?>
 
-  <div class="container px-4 py-5">
+  <div class="container px-4 pt-3 pb-5">
     <h2 class="pb-2 mb-2 text-center border-bottom">Interview</h2>
     <h4 class="pt-2 pb-3 text-center"><?php echo htmlentities($this_step['title']); ?></h4>
     <div class="row">
-      <div class="col-md-7 mx-auto">
+      <div class="<?php if($step == 'personal'){ echo 'col-12'; }else{ echo 'col-md-6'; } ?> mx-auto">
         <form method="POST" enctype="multipart/form-data">
           <input type="hidden" name="action" value="save">
           <?php
@@ -173,7 +173,9 @@ if(!$this_step){
                 $input = '<input type="date" class="form-control" name="answers['.htmlentities($question['name']).']" value="0" required>';
               }elseif($question['type'] == 'select'){
                 $input = '<select class="form-control" name="answers['.htmlentities($question['name']).']'.($question['allow_multiselect']? '[]' : '').'" required '.($question['allow_multiselect']? 'multiple' : '').'>';
-                $input .= '<option disabled selected>Select an Option</option>';
+                if(!$question['allow_multiselect']){
+                  $input .= '<option disabled selected>Select an Option</option>';
+                }
                 foreach($question['options'] as $option=>$option_text){
                   if(!$option || is_numeric($option)){
                     $option = $option_text;
@@ -207,7 +209,7 @@ if(!$this_step){
               ?>
               <div class="row">
                 <div class="col-md-6 mb-3">
-                  <video width="240" height="240" controls>
+                  <video width="85%" height="100%" controls>
                     <source src="/assets/video/<?php echo htmlentities($question['video']); ?>">
                     Your browser does not support the video tag.
                   </video>
