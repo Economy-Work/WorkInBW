@@ -1,3 +1,4 @@
+![](/backend/assets/img/banner.svg)
 # WorkInBW
 ## About the Project:
 This Project is a Web-Based Plattform, which help foreign specialized workers to find the perfect workingplace in Baden-Württemberg.
