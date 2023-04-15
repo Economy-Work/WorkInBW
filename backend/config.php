@@ -14,7 +14,8 @@ $pdo = new PDO('mysql:host=localhost:3306;dbname=workinbw', 'workinbw', 'hellowo
 $interview_steps = [ // subject to change
   'details' => [
     'type' => 'form',
-    'title' => 'General details about your Profession',
+    'title' => 'General details about you & your profession',
+    'description' => 'Enter your basic information to get started',
     'questions' => [
       [
         'type' => 'select',
@@ -46,6 +47,7 @@ $interview_steps = [ // subject to change
   'speaking' => [
     'type' => 'form',
     'title' => 'Speaking Test',
+    'description' => 'Test how well you can speak German',
     'questions' => [
       [
         'type' => 'voice',
@@ -57,6 +59,7 @@ $interview_steps = [ // subject to change
   'writing' => [
     'type' => 'form',
     'title' => 'Writing Test',
+    'description' => 'Tets how well you can write in German',
     'questions' => [
       [
         'type' => 'textarea',
@@ -68,6 +71,7 @@ $interview_steps = [ // subject to change
   'personality' => [
     'type' => 'form',
     'title' => 'Personality Test',
+    'description' => 'Answer some personality-based questions',
     'questions' => [
       [
         'type' => 'text',
