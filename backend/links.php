@@ -36,6 +36,8 @@ require_once __DIR__.'/config.php';
   </div>
 </main>
 
+<?php include __DIR__.'/parts/footer.php'; ?>
+
   <script src="/assets/js/bootstrap.js"></script>
 </body>
 </html>

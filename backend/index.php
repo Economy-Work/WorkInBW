@@ -49,6 +49,8 @@
   </div>
 </main>
 
+<?php include __DIR__.'/parts/footer.php'; ?>
+
   <script src="/assets/js/bootstrap.js"></script>
 </body>
 </html>
