@@ -88,37 +88,8 @@ def home():
 
         return json.dumps(result)
 
-        # return render_template(
-        #     "result.html", per=DF["Predicted Personality"].tolist()[0]
-        # )
-
-
-# @app.route("/learn")
-# def learn():
-#     return render_template("learn.html")
-
-
-# @app.route("/working")
-# def working():
-#     return render_template("working.html")
-
-
-# # Handling error 404
-# @app.errorhandler(404)
-# def not_found_error(error):
-#     return render_template("error.html", code=404, text="Page Not Found"), 404
-
-
-# # Handling error 500
-# @app.errorhandler(500)
-# def internal_error(error):
-#     return render_template("error.html", code=500, text="Internal Server Error"), 500
-
 
 if __name__ == "__main__":
 
     # use 0.0.0.0 for replit hosting
     app.run(host="0.0.0.0", port=8080)
-
-    # for localhost testing
-    # app.run()
