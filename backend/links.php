@@ -5,7 +5,7 @@ require_once __DIR__.'/config.php';
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Dashboard</title>
+  <title>Links</title>
   <meta name="author" content="">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
