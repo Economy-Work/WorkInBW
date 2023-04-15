@@ -225,12 +225,12 @@ $interview_steps = [ // subject to change
   'writing' => [
     'type' => 'form',
     'title' => 'Writing Test',
-    'description' => 'Tets how well you can write in German',
+    'description' => 'Test how well you can write in German',
     'questions' => [
       [
         'type' => 'textarea',
         'name' => 'writing',
-        'question' => 'To assess your writing an grammar skills, please write about ~500 words about the following topic:',
+        'question' => 'To assess your writing and grammar skills, please write about ~500 words about the following topic:',
         'topics' => [
           'Some people think that government is wasting money on the arts  and this money can be utilized in a better way. What do you think?',
           'Most artists earn low salaries and should therefore receive funds from government to continue with their work. To what extent do you agree?',
@@ -245,7 +245,7 @@ $interview_steps = [ // subject to change
           'Doctors should be responsible for educating their patients about how to improve health. Do you agree with this?',
           'Scientist predict that all people will choose to talk the same global language in the future. DO you think this is a positive or negative development?',
           'Finding job satisfaction is considered to be a luxury in many developing countries. What do you think that is? Do you think job satisfaction is important?',
-          'Having a good university degree guarantees people a good job? To what extent you agree?',
+          'Having a good university degree guarantees people a good job? To what extent do you agree?',
           'Globalization has both advantages and disadvantages. Discuss both and give your opinion?'
         ]
       ]
