@@ -82,6 +82,9 @@ function showCountdown(){
     setTimeout(showCountdown, 1000);
   }else{
     stopCam();
+    alert('Speaking Test done!');
+    // TODO send sound recording to server for analyzation
+    window.location = '/dashboard.php';
   }
 }
 

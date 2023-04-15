@@ -11,6 +11,36 @@ $step = strtolower($_GET['step']);
 
 if(isset($_POST['action'])){
 
+  if($step == 'personality'){
+    $original_answer = $answer;
+    // call the python API to process the written text
+    $curl = curl_init();
+    curl_setopt_array($curl, [
+      CURLOPT_URL => 'http://127.0.0.1:8003/personalityCheck',
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_ENCODING => '', // empty to enable all supported compression algos
+      CURLOPT_FOLLOWLOCATION => true,
+      CURLOPT_CUSTOMREQUEST => 'POST',
+      CURLOPT_POSTFIELDS => json_encode([
+        "age" => 25,
+        "gender" => "male",
+        "openness" => 4,
+        "neuroticism" => 5,
+        "conscientiousness" => 6,
+        "agreeableness" => 4,
+        "extraversion" => 9
+      ]),
+      CURLOPT_HTTPHEADER => [
+        'Content-Type: application/json'
+      ]
+    ]);
+    $response = curl_exec($curl);
+    $answer = $response; // save returned data into db
+    curl_close($curl);
+    $statement = $pdo->prepare('INSERT INTO interviews (user_id, step, question_name, answer, time) VALUES (?, ?, ?, ?, ?)');
+    $statement->execute(array($_SESSION['user_id'], $step, strtolower($question), $answer, time()));
+  }
+
   foreach($_POST['answers'] as $question => $answer){
     if(is_array($answer)){
       $answer_txt = '';
@@ -27,7 +57,7 @@ if(isset($_POST['action'])){
     }
     if($question == 'writing'){
       $original_answer = $answer;
-      // cll the python API to process the written text
+      // call the python API to process the written text
       $curl = curl_init();
       curl_setopt_array($curl, [
         CURLOPT_URL => 'http://127.0.0.1:8001/AnalyzeText',
@@ -58,6 +88,33 @@ if(isset($_POST['action'])){
       ]);
       $response = curl_exec($curl);
       $answer .= ','.$response; // save returned data into db
+      curl_close($curl);
+    }
+    if($step == 'personality'){
+      $original_answer = $answer;
+      // call the python API to process the written text
+      $curl = curl_init();
+      curl_setopt_array($curl, [
+        CURLOPT_URL => 'http://127.0.0.1:8003/personalityCheck',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '', // empty to enable all supported compression algos
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS => '{
+          "age": 25,
+          "gender": "male",
+          "openness": 4,
+          "neuroticism": 5,
+          "conscientiousness": 6,
+          "agreeableness": 4,
+          "extraversion": 9
+      }',
+        CURLOPT_HTTPHEADER => [
+          'Content-Type: application/json'
+        ]
+      ]);
+      $response = curl_exec($curl);
+      $answer = $response; // save returned data into db
       curl_close($curl);
     }
     $statement = $pdo->prepare('INSERT INTO interviews (user_id, step, question_name, answer, time) VALUES (?, ?, ?, ?, ?)');
@@ -131,10 +188,20 @@ if(!$this_step){
                 $input = '<textarea class="form-control" name="answers['.htmlentities($question['name']).']" required></textarea>';
               }elseif($question['type'] == 'video'){
                 $show_submit = false;
-                $input = '<video id="video" style="display: none; width: 600px; height: 320px; max-width: 100%; background: black; transform: scaleX(-1);" autoplay></video><canvas id="canvas" style="display:none;"></canvas><h2 id="countdown"></h2><br><button type="button" id="btn" class="btn btn-dark btn-lg mx-auto mb-3">START</button><script src="/assets/js/camera.js"></script>';
+                $input = '<video id="video" style="display: none; width: 600px; height: 320px; max-width: 100%; background: black; transform: scaleX(-1);" autoplay muted></video><canvas id="canvas" style="display:none;"></canvas><h2 id="countdown"></h2><br><button type="button" id="btn" class="btn btn-dark btn-lg mx-auto mb-3">START</button><script src="/assets/js/camera.js"></script>';
+                if($step == 'speaking'){
+                  // TODO - TEMP: mark speaking test as completed
+                  $statement = $pdo->prepare('INSERT INTO interviews (user_id, step, question_name, answer, time) VALUES (?, ?, ?, ?, ?)');
+                  $statement->execute(array($_SESSION['user_id'], $step, 'speaking', 'tmp_success_mocked', time()));
+                }
               }
               if($question['extra_info']){
                 $input .= '<div class="alert alert-info mt-1" role="alert"><small>'.htmlentities($question['extra_info']).'</small></div>';
+              }
+              $q_text = $question['question'];
+              if($question['topics']){
+                shuffle($question['topics']);  
+                $q_text .= ' '.$question['topics'][0];
               }
               if($question['video']){
               ?>
@@ -150,7 +217,7 @@ if(!$this_step){
               }
           ?>
           <div class="mb-3">
-            <label class="form-label"><?php echo htmlentities($question['question']); ?></label>
+            <label class="form-label"><?php echo htmlentities($q_text); ?></label>
             <?php echo $input; ?>
           </div>
           <?php if($question['video']){ ?>
