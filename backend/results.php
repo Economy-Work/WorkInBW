@@ -33,7 +33,7 @@ require_once __DIR__.'/config.php';
           </tr>
           <tr>
             <th scope="row" class="text-start">Speaking-Assignment</th>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+            <td>40</td>
           </tr>
         </tbody>
         <tbody>
@@ -53,7 +53,7 @@ require_once __DIR__.'/config.php';
           </tr>
           <tr>
             <th scope="row" class="text-start">Summary</th>
-            <td>260</td>
+            <td>300</td>
           </tr>
         </tbody>
       </table>
