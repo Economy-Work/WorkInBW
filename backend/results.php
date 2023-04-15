@@ -29,30 +29,31 @@ require_once __DIR__.'/config.php';
         <tbody>
           <tr>
             <th scope="row" class="text-start">Job-Skills</th>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+            <td>100</td>
           </tr>
           <tr>
             <th scope="row" class="text-start">Speaking-Assignment</th>
-            <td></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
             <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
           </tr>
         </tbody>
-
         <tbody>
           <tr>
             <th scope="row" class="text-start">Writing-Assignment</th>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+            <td>70</td>
           </tr>
           <tr>
             <th scope="row" class="text-start">Personality</th>
-            <td></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+            <td>20</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <th scope="row" class="text-start">Writing-Assignment</th>
+            <td>70</td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">Summary</th>
+            <td>260</td>
           </tr>
         </tbody>
       </table>
