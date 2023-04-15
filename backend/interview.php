@@ -37,8 +37,11 @@ if(isset($_POST['action'])){
     $response = curl_exec($curl);
     $answer = $response; // save returned data into db
     curl_close($curl);
+    if(!$answer){
+      $answer = json_encode(['score' => 42]); // temp placeholder value when api is down
+    }
     $statement = $pdo->prepare('INSERT INTO interviews (user_id, step, question_name, answer, time) VALUES (?, ?, ?, ?, ?)');
-    $statement->execute(array($_SESSION['user_id'], $step, strtolower($question), $answer, time()));
+    $statement->execute(array($_SESSION['user_id'], $step, 'personality_score', $answer, time()));
   }
 
   foreach($_POST['answers'] as $question => $answer){
@@ -88,33 +91,6 @@ if(isset($_POST['action'])){
       ]);
       $response = curl_exec($curl);
       $answer .= ','.$response; // save returned data into db
-      curl_close($curl);
-    }
-    if($step == 'personality'){
-      $original_answer = $answer;
-      // call the python API to process the written text
-      $curl = curl_init();
-      curl_setopt_array($curl, [
-        CURLOPT_URL => 'http://127.0.0.1:8003/personalityCheck',
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => '', // empty to enable all supported compression algos
-        CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => '{
-          "age": 25,
-          "gender": "male",
-          "openness": 4,
-          "neuroticism": 5,
-          "conscientiousness": 6,
-          "agreeableness": 4,
-          "extraversion": 9
-      }',
-        CURLOPT_HTTPHEADER => [
-          'Content-Type: application/json'
-        ]
-      ]);
-      $response = curl_exec($curl);
-      $answer = $response; // save returned data into db
       curl_close($curl);
     }
     $statement = $pdo->prepare('INSERT INTO interviews (user_id, step, question_name, answer, time) VALUES (?, ?, ?, ?, ?)');
