@@ -36,19 +36,19 @@
         <div class="col-md-4">
           <div class="d-flex flex-column justify-content-center align-items-center text-center border rounded bg-white h-100 px-2 py-4">
             <h3>1. Step:</h3>
-            Sign up, complete the Assigment and get the results
+            Sign up for WorkinBW and start the adventurous journey in TheLänd!
           </div>
         </div>
         <div class="col-md-4">
           <div class="d-flex flex-column justify-content-center align-items-center text-center border rounded bg-white h-100 px-2 py-4">
             <h3>2. Step:</h3>
-            Complete the Checklist on your dashboard
+            Hurray! Your profile is shared with employers across BW
           </div>
         </div>
         <div class="col-md-4">
           <div class="d-flex flex-column justify-content-center align-items-center text-center border rounded bg-white h-100 px-2 py-4">
             <h3>3. Step:</h3>
-            Yu're ready to start working in BW!
+            Lets get started to experience the life of your dreams in BW!
           </div>
         </div>
       </div>
