@@ -25,6 +25,7 @@ DROP TABLE IF EXISTS `interviews`;
 CREATE TABLE `interviews` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
+  `step` text NOT NULL,
   `question_name` text NOT NULL,
   `answer` text NOT NULL,
   `time` int(11) NOT NULL,
