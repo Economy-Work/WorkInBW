@@ -88,7 +88,7 @@ $interview_steps = [ // subject to change
       [
         'type' => 'text',
         'name' => 'prof_achiv',
-        'question' => 'What is the professional achievment you`r most proud of?'
+        'question' => 'What is the professional achievment you\'re most proud of?'
       ],
       [
         'type' => 'text',
@@ -216,16 +216,42 @@ $interview_steps = [ // subject to change
     'type' => 'form',
     'title' => 'Personality Test',
     'description' => 'Answer some personality-based questions',
+    'extra_info' => 'Please enter values between 1 and 8. Which aspects apply to you? 1 is lowest, 8 is highest.',
     'questions' => [
       [
-        'type' => 'text',
-        'name' => 'pers1',
-        'question' => 'Personality question 1 goes here'
+        'type' => 'number',
+        'min_value' => 1,
+        'max_value' => 8,
+        'name' => 'openness',
+        'question' => 'OPENNESS - OPEN TO TRYING NEW THINGS'
       ],
       [
-        'type' => 'text',
-        'name' => 'pers2',
-        'question' => 'Personality question 2 goes here'
+        'type' => 'number',
+        'min_value' => 1,
+        'max_value' => 8,
+        'name' => 'neuroticism',
+        'question' => 'NEUROTICISM - EMOTIONAL INSTABILITY'
+      ],
+      [
+        'type' => 'number',
+        'min_value' => 1,
+        'max_value' => 8,
+        'name' => 'conscientiousness',
+        'question' => 'CONSCIENTIOUSNESS - SELF-DISCIPLINE'
+      ],
+      [
+        'type' => 'number',
+        'min_value' => 1,
+        'max_value' => 8,
+        'name' => 'agreeableness',
+        'question' => 'AGREEABLENESS - CARING ABOUT OTHERS'
+      ],
+      [
+        'type' => 'number',
+        'min_value' => 1,
+        'max_value' => 8,
+        'name' => 'extraversion',
+        'question' => 'EXTRAVERSION - HOW MUCH SOCIAL YOU ARE'
       ]
     ]
   ]
