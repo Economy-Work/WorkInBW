@@ -228,21 +228,26 @@ $interview_steps = [ // subject to change
     'description' => 'Tets how well you can write in German',
     'questions' => [
       [
-        'Some people think that government is wasting money on the arts  and this money can be utilized in a better way. What do you think?',
-        'Most artists earn low salaries and should therefore receive funds from government to continue with their work. To what extent do you agree?',
-        'Companies should provide sports and social facilities for local communities. What do you think?',
-        'What are the advantages and disadvantages for both individuals and companies to shopping online? To what extent do you agree?',
-        'marketing and promotion is the key to a successful business? What do you think?',
-        'Some people think that only way to have success in business is to have a unique product. What do you think?',
-        'Some people think that women should not be allowed to work in the police force. What do you think?',
-        'More people believe that having a fixed punishment for all crimes is more efficient. What is your opinion on this.?',
-        'Some people think that poverty is the reason behind most crimes. To what extent do you agree?',
-        'The best way to improve health is to exercise daily. What do you think?',
-        'Doctors should be responsible for educating their patients about how to improve health. Do you agree with this?',
-        'Scientist predict that all people will choose to talk the same global language in the future. DO you think this is a positive or negative development?',
-        'Finding job satisfaction is considered to be a luxury in many developing countries. What do you think that is? Do you think job satisfaction is important?',
-        'Having a good university degree guarantees people a good job? To what extent you agree?',
-        'Globalization has both advantages and disadvantages. Discuss both and give your opinion?'
+        'type' => 'textarea',
+        'name' => 'writing',
+        'question' => 'Text to read out loud goes here',
+        'topics' => [
+          'Some people think that government is wasting money on the arts  and this money can be utilized in a better way. What do you think?',
+          'Most artists earn low salaries and should therefore receive funds from government to continue with their work. To what extent do you agree?',
+          'Companies should provide sports and social facilities for local communities. What do you think?',
+          'What are the advantages and disadvantages for both individuals and companies to shopping online? To what extent do you agree?',
+          'marketing and promotion is the key to a successful business? What do you think?',
+          'Some people think that only way to have success in business is to have a unique product. What do you think?',
+          'Some people think that women should not be allowed to work in the police force. What do you think?',
+          'More people believe that having a fixed punishment for all crimes is more efficient. What is your opinion on this.?',
+          'Some people think that poverty is the reason behind most crimes. To what extent do you agree?',
+          'The best way to improve health is to exercise daily. What do you think?',
+          'Doctors should be responsible for educating their patients about how to improve health. Do you agree with this?',
+          'Scientist predict that all people will choose to talk the same global language in the future. DO you think this is a positive or negative development?',
+          'Finding job satisfaction is considered to be a luxury in many developing countries. What do you think that is? Do you think job satisfaction is important?',
+          'Having a good university degree guarantees people a good job? To what extent you agree?',
+          'Globalization has both advantages and disadvantages. Discuss both and give your opinion?'
+        ]
       ]
     ]
   ],
