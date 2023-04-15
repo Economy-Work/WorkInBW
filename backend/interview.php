@@ -7,8 +7,9 @@ if(!$_SESSION['loggedin']){
   die();
 }
 
-if(isset($_POST['next_step'])){
-  $step = strtolower($_POST['next_step']);
+$step = strtolower($_GET['step']);
+
+if(isset($_POST['action'])){
   foreach($_POST['answers'] as $question => $answer){
     if(!is_string($answer) || $_FILES['answers'][$question]){
       $file_name = $_FILES['answers']['name'][$question];
@@ -16,26 +17,15 @@ if(isset($_POST['next_step'])){
       $file_type = $_FILES['answers']['type'][$question];
       continue; // TODO: handle file uploads from "speaking" step
     }
-    $statement = $pdo->prepare('INSERT INTO interviews (user_id, question_name, answer, time) VALUES (?, ?, ?, ?)');
-    $statement->execute(array($_SESSION['user_id'], strtolower($question), $answer, time()));
+    $statement = $pdo->prepare('INSERT INTO interviews (user_id, step, question_name, answer, time) VALUES (?, ?, ?, ?, ?)');
+    $statement->execute(array($_SESSION['user_id'], $step, strtolower($question), $answer, time()));
+    header('Location: /dashboard.php');
+    die();
   }
 }
 
-$is_first_step = false;
-$is_last_step = false;
 if(!$step){
   $step = array_key_first($interview_steps);
-  $next_step_id = 1;
-}else{
-  $next_step_id = array_search($step, array_keys($interview_steps))+1;
-}
-$next_step = array_keys($interview_steps)[$next_step_id];
-
-if($next_step_id == 1){
-  $is_first_step = true;
-}
-if($next_step_id >= count($interview_steps)){
-  $is_last_step = true;
 }
 
 $this_step = $interview_steps[$step];
@@ -67,7 +57,7 @@ if(!$this_step){
     <div class="row">
       <div class="col-md-6 mx-auto">
         <form method="POST" enctype="multipart/form-data">
-          <input type="hidden" name="next_step" value="<?php echo htmlentities($next_step); ?>">
+          <input type="hidden" name="action" value="save">
           <?php
           if($this_step['type'] == 'form'){
             foreach($this_step['questions'] as $question){
