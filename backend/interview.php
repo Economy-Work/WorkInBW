@@ -81,7 +81,7 @@ if(!$this_step){
     <h2 class="pb-2 mb-2 text-center border-bottom">Interview</h2>
     <h4 class="pt-2 pb-3 text-center"><?php echo htmlentities($this_step['title']); ?></h4>
     <div class="row">
-      <div class="col-md-6 mx-auto">
+      <div class="col-md-7 mx-auto">
         <form method="POST" enctype="multipart/form-data">
           <input type="hidden" name="action" value="save">
           <?php
@@ -119,11 +119,27 @@ if(!$this_step){
               if($question['extra_info']){
                 $input .= '<div class="alert alert-info mt-1" role="alert"><small>'.htmlentities($question['extra_info']).'</small></div>';
               }
+              if($question['video']){
+              ?>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <video width="240" height="240" controls>
+                    <source src="/assets/video/<?php echo htmlentities($question['video']); ?>">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div class="col-md-6">
+              <?php
+              }
           ?>
           <div class="mb-3">
             <label class="form-label"><?php echo htmlentities($question['question']); ?></label>
             <?php echo $input; ?>
           </div>
+          <?php if($question['video']){ ?>
+              </div>
+            </div>
+            <?php } ?>
           <?php
             }
           }
