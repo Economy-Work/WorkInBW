@@ -3,7 +3,7 @@ const canvas = document.getElementById('canvas');
 const countdown = document.getElementById('countdown');
 const btn = document.getElementById('btn');
 var video_started = false;
-var video_duration_max = 300;
+var video_duration_max = 180;
 var video_duration = 0;
 
 const startCam = () => {
