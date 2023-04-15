@@ -107,15 +107,26 @@ $interview_steps = [ // subject to change
         'allow_multiselect' => true,
         'name' => 'jobtitle',
         'question' => 'What\'s your Job or the Job you want to exercise?',
+        'extra_info' => 'More Professions will be added soon!',
         'options' => [
-          // jobs go here
+          '' => 'Cybersecurity',
+          '' => 'Data Management',
+          '' => 'Data Science & AI',
+          '' => 'Design',
+          '' => 'Alternative Antriebstechnologien',
+          '' => 'Analytische Chemie',
+          '' => 'Assistiertes & autonomes Fahren',
+          '' => 'Biotechnologie',
+          '' => 'Electrical Engineering',
+          '' => 'Industrial Engineering'
         ]
       ],
       [
         'type' => 'number',
         'name' => 'experience',
         'question' => 'How many years do you have experience in this field?'
-      ]
+      ],
+      // todo: skill multiselect
     ]
   ],
   'speaking' => [
