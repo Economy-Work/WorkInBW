@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Interview</title>
+  <title>WorkinBW</title>
   <meta name="author" content="">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,19 +34,19 @@
     <div class="container">
       <div class="row mt-3 g-5" >
         <div class="col-md-4">
-          <div class="text-center border rounded bg-white h-100 p-2">
+          <div class="d-flex flex-column justify-content-center align-items-center text-center border rounded bg-white h-100 px-2 py-4">
             <h3>1. Step:</h3>
             Sign up and complete the Assigment and get the results
           </div>
         </div>
         <div class="col-md-4">
-          <div class="text-center border rounded bg-white h-100 p-2">
+          <div class="d-flex flex-column justify-content-center align-items-center text-center border rounded bg-white h-100 px-2 py-4">
             <h3>2. Step:</h3>
             Complete the Checklist in your dashboard
           </div>
         </div>
         <div class="col-md-4">
-          <div class="text-center border rounded bg-white h-100 p-2">
+          <div class="d-flex flex-column justify-content-center align-items-center text-center border rounded bg-white h-100 px-2 py-4">
             <h3>3. Step:</h3>
             Ready to start working in BW
           </div>
@@ -54,7 +54,7 @@
       </div>
       <div class="row mt-3 gx-5">
         <div class="col-12">
-          <a href="/signup.php" class="btn btn-primary btn-lg btn-block btn-dark p-2 w-100">Let's get started!</a>
+          <a href="/signup.php" class="btn btn-lg btn-block btn-dark p-2 w-100">Let's get started!</a>
         </div>
       </div>
     </div>
