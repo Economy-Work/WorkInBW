@@ -22,7 +22,7 @@ require_once __DIR__.'/config.php';
       <table class="table text-center">
         <thead>
           <tr>
-            <th style="width: 60%;"></th>
+            <th style="width: 60%;">Category</th>
             <th style="width: 40%;">Score</th>
           </tr>
         </thead>
