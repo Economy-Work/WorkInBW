@@ -166,7 +166,7 @@ if(!$this_step){
                 $input = '<textarea class="form-control" name="answers['.htmlentities($question['name']).']" required></textarea>';
               }elseif($question['type'] == 'video'){
                 $show_submit = false;
-                $input = '<video id="video" style="display: none; width: 600px; height: 320px; max-width: 100%; background: black; transform: scaleX(-1);" autoplay muted></video><canvas id="canvas" style="display:none;"></canvas><h2 id="countdown"></h2><br><button type="button" id="btn" class="btn btn-dark btn-lg mx-auto mb-3">START</button><script src="/assets/js/camera.js"></script>';
+                $input = '<video id="video" style="display: none; width: 600px; height: 320px; max-width: 100%; background: black; transform: scaleX(-1);" autoplay muted></video><canvas id="canvas" style="display:none;"></canvas><h2 id="countdown"></h2><br><button type="button" id="btn" class="btn btn-dark btn-lg mx-auto mb-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-record-fill" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 13A5 5 0 1 0 8 3a5 5 0 0 0 0 10z"/></svg> START RECORDING</button><script src="/assets/js/camera.js"></script>';
                 if($step == 'speaking'){
                   // TODO - TEMP: mark speaking test as completed
                   $statement = $pdo->prepare('INSERT INTO interviews (user_id, step, question_name, answer, time) VALUES (?, ?, ?, ?, ?)');
