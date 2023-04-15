@@ -6,7 +6,7 @@
   <meta name="author" content="">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="assets/css/bootstrap.css" rel="stylesheet">
+  <link href="/assets/css/bootstrap.css" rel="stylesheet">
 </head>
 <body  style="background: #FDFF00;">
 
@@ -25,10 +25,12 @@
     </div>
   </header>
 
-  <div class="container px-4 py-5">
+  <div class="container px-4 py-5 pt-3">
 
     <h1 class="pb-2 mb-2 text-center border-bottom">Welcome to WorkinBW</h1>
-    <img src="assets/img/logo.svg" class="img-fluid" alt="Responsive image">
+    <div class="row">
+      <img src="/assets/img/logo.svg" class="col-md-8 mx-auto img-fluid" alt="WorkinBW">
+    </div>
     <div class="container">
       <div class="row mt-3 g-5" >
         <div class="col-md-4">
@@ -52,13 +54,13 @@
       </div>
       <div class="row mt-3 gx-5">
         <div class="col-12">
-          <button href="interview.php" type="button" class="btn btn-primary btn-lg btn-block btn-dark p-2 w-100">Let's get started!</button>
+          <a href="/signup.php" class="btn btn-primary btn-lg btn-block btn-dark p-2 w-100">Let's get started!</a>
         </div>
       </div>
     </div>
   </div>
 </main>
 
-  <script src="assets/js/bootstrap.js"></script>
+  <script src="/assets/js/bootstrap.js"></script>
 </body>
 </html>
