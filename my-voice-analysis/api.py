@@ -1,8 +1,7 @@
 # import myspsolution as mysp
 import pandas as pd
-from flask import Flask, render_template, request
+from flask import Flask, request
 from numpy import *
-from sklearn import linear_model
 import json
 
 mysp=__import__("my-voice-analysis")
