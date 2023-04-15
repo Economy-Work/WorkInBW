@@ -97,6 +97,9 @@ if(!$this_step){
                 $input = '<select class="form-control" name="answers['.htmlentities($question['name']).']'.($question['allow_multiselect']? '[]' : '').'" required '.($question['allow_multiselect']? 'multiple' : '').'>';
                 $input .= '<option disabled selected>Select an Option</option>';
                 foreach($question['options'] as $option=>$option_text){
+                  if(!$option || is_numeric($option)){
+                    $option = $option_text;
+                  }
                   $input .= '<option value="'.htmlentities($option).'">'.htmlentities($option_text).'</option>';
                 }
                 $input .= '</select>';
