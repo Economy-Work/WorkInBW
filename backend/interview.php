@@ -26,6 +26,7 @@ if(isset($_POST['action'])){
       continue; // TODO: handle file uploads from "speaking" step
     }
     if($question == 'writing'){
+      $original_answer = $answer;
       // cll the python API to process the written text
       $curl = curl_init();
       curl_setopt_array($curl, [
@@ -34,13 +35,29 @@ if(isset($_POST['action'])){
         CURLOPT_ENCODING => '', // empty to enable all supported compression algos
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => json_encode(['text' => $answer]),
+        CURLOPT_POSTFIELDS => json_encode(['text' => $original_answer]),
         CURLOPT_HTTPHEADER => [
           'Content-Type: application/json'
         ]
       ]);
       $response = curl_exec($curl);
       $answer = $response; // save returned data into db
+      curl_close($curl);
+
+      $curl = curl_init();
+      curl_setopt_array($curl, [
+        CURLOPT_URL => 'http://127.0.0.1:8002/spellGrammarCheck',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '', // empty to enable all supported compression algos
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS => json_encode(['text' => $original_answer]),
+        CURLOPT_HTTPHEADER => [
+          'Content-Type: application/json'
+        ]
+      ]);
+      $response = curl_exec($curl);
+      $answer .= ','.$response; // save returned data into db
       curl_close($curl);
     }
     $statement = $pdo->prepare('INSERT INTO interviews (user_id, step, question_name, answer, time) VALUES (?, ?, ?, ?, ?)');
