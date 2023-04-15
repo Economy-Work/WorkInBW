@@ -17,9 +17,24 @@ $interview_steps = [ // subject to change
     'title' => 'General details about your Profession',
     'questions' => [
       [
+        'type' => 'select',
+        'name' => 'gender',
+        'question' => 'Pick your Gender?'
+      ],
+      [
+        'type' => 'date',
+        'name' => 'bday',
+        'question' => 'When are you born?'
+      ],
+      [
         'type' => 'text',
-        'name' => 'desc',
-        'question' => 'What\'s your Job description?'
+        'name' => 'nationality',
+        'question' => 'Which nationality do you have?'
+      ],
+      [
+        'type' => 'select',
+        'name' => 'jobtitle',
+        'question' => 'What\'s your Job or the Job you want to exercise?'
       ],
       [
         'type' => 'number',
