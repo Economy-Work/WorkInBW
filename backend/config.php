@@ -20,7 +20,7 @@ $interview_steps = [ // subject to change
       [
         'type' => 'select',
         'name' => 'gender',
-        'question' => 'Pick your Gender?',
+        'question' => 'Pick your Gender',
         'options' => [
           'female' => 'Female',
           'male' => 'Male',
@@ -31,7 +31,7 @@ $interview_steps = [ // subject to change
       [
         'type' => 'date',
         'name' => 'bday',
-        'question' => 'When are you born?'
+        'question' => 'What\'s your birthday?'
       ],
       [
         'type' => 'text',
