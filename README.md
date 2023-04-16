@@ -25,7 +25,10 @@ After all questions and tasks, the answers get automatically evaluated, then the
 Aditionally, the users are able to view a list of resources which will help them with getting started in Baden-Württemberg: The resources cover topics like work permits, visas, accomondation in BW and more.
 
 ## Running it locally:
-To run the project locally, you need to have a python3 and php >= 7.4 runtime installed and setup on your system.
+To run the project locally, you need to have a python3 and php >= 7.4 runtime installed and setup on your system. You'll also need a running MySQL database, such as MariaDB.
+
+First of all, you'll need to create a new MySQL database and a user with access to it. Enter the credentials into the `backend/config.php` file and import the empty databse schema (`db_schema.sql`) into your database to create the necessary tables.
+
 To run the PHP backend, clone the Repository and either you can setup an webserver with PHP to support to run and access it, or you can go into the `backend/` directory and start a local development server:
 `php -S localhost:8080`
 
