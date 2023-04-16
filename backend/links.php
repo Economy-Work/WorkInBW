@@ -21,7 +21,8 @@ require_once __DIR__.'/config.php';
     <ul>
       <li><a href="https://www.make-it-in-germany.com/en/" target="_blank">Make it in Germany</a></li>
       <li><a href="https://www.auswaertiges-amt.de/en" target="_blank">Foreign Office Germany</a></li>
-      <li><a href="https://www.anerkennung-in-deutschland.de/en/interest/finder/profession?type=list" target="_blank">Check for recognition of your profession</a></li>
+      <li><a href="https://www.anerkennung-in-deutschland.de/en/interest/finder/profession?type=list" target="_blank">Check for recognition of your profession goverment site</a></li>
+      <li><a href="https://anabin.kmk.org/no_cache/filter/institutionen.html" target="_blank">Check for recognition of your profession anabin</a></li>
       <li><a href="https://visa.diplo.de/en/index.html#/vib/schnelltest" target="_blank">Quick Check Visa</a></li>
       <li><a href="https://www.diplo.de/addresses" target="_blank">Check for additional Requierments</a></li>
       <li><a href="https://videx-national.diplo.de/videx/visum-erfassung/#/videx-langfristiger-aufenthalt" target="_blank">Visa Form</a></li>
