@@ -36,4 +36,4 @@ For the AI backend to work (which evaulate the assignment answers), it is recomm
 
 A live demo can be found (with the python backend working only to a limited extend because of available hardware resources) at https://workinbw.com/
 
-~ A <a href="https://mesh-stuttgart.de/" target="_blank">MESH2023</a> Hackathon Project by  <a href="https://github.com/ridhimagarg" target="_blank">Ridhima</a>, <a href="https://github.com/akshat4112" target="_blank">Akshat</a>, <a href="https://github.com/megagmbh-mega" target="_blank">Felix</a> and <a href="https://github.com/anthemaker" target="_blank">Anton</a.
+~ A <a href="https://mesh-stuttgart.de/" target="_blank">MESH2023</a> Hackathon Project by  <a href="https://github.com/ridhimagarg" target="_blank">Ridhima</a>, <a href="https://github.com/akshat4112" target="_blank">Akshat</a>, <a href="https://github.com/megagmbh-mega" target="_blank">Felix</a> and <a href="https://github.com/anthemaker" target="_blank">Anton</a>.
