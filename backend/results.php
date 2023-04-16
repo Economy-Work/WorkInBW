@@ -1,6 +1,12 @@
 <?php
 require_once __DIR__.'/config.php';
 
+// redirect the user to the login page if they aren't loggedin yet
+if(!$_SESSION['loggedin']){
+  header('Location: /login.php');
+  die();
+}
+
 ?><!DOCTYPE html>
 <html>
 <head>
