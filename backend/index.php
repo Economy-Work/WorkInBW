@@ -22,7 +22,9 @@ require_once __DIR__.'/config.php';
     <div class="row">
       <img src="/assets/img/logo.svg" class="col-md-7 mx-auto img-fluid" alt="WorkinBW">
     </div>
-    <div class="container">
+    <div class="container text-center pt-3">
+      <h4>Are you looking for a job in your field in Baden-Württemberg, Germany?</h4>
+      <p>With WorkinBW, you can complete pre-hiring assessments to get matched with great local and global companies in Baden-Württemberg looking for employees!</p>
       <div class="row mt-3 g-5" >
         <div class="col-md-4">
           <div class="d-flex flex-column justify-content-center align-items-center text-center border rounded bg-white h-100 px-2 py-4">
